@@ -1,0 +1,99 @@
+:root {
+    --gold: #D4AF37;
+    --dark-bg: #0a0a0a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+/* Эффект Parallax с твоим фоном _DSC0134.JPG */
+.parallax-bg {
+    background-image: url('../img/_DSC0134.JPG'); /* Путь к твоему фону */
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(25%); /* Затемнение для читаемости текста */
+}
+
+.navbar {
+    background-color: rgba(10, 10, 10, 0.9) !important;
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--gold) !important; }
+
+/* Responsive Typography */
+@media (min-width: 992px) { .responsive-title { font-size: 4.5rem; } .responsive-text { font-size: 1.4rem; } }
+@media (max-width: 991px) { .responsive-title { font-size: 2.8rem; } .responsive-text { font-size: 1.1rem; } }
+@media (max-width: 576px) { .responsive-title { font-size: 2rem; } .responsive-text { font-size: 0.9rem; } }
+
+/* Custom Grid (Task 1) */
+.custom-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+.custom-box {
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 25px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+@media (min-width: 992px) { .custom-box { width: calc(33.33% - 20px); } }
+@media (min-width: 576px) and (max-width: 991px) { .custom-box { width: calc(50% - 20px); } }
+@media (max-width: 575px) { .custom-box { width: 100%; } }
+
+/* Bootstrap Grid Item (Task 2) */
+.grid-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--gold);
+    padding: 20px;
+    transition: 0.3s;
+}
+.grid-item:hover { background: rgba(212, 175, 55, 0.15); }
+
+/* Portfolio Styles */
+.bg-black-50 { background-color: rgba(0, 0, 0, 0.6); }
+.bg-dark-glass { background-color: rgba(15, 15, 15, 0.8); backdrop-filter: blur(15px); }
+
+.hover-card { transition: 0.4s ease; }
+.hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+}
+
+.card-img-top {
+    height: 250px; /* Фиксированная высота для аккуратности */
+    object-fit: cover; /* Чтобы фото не сплющивалось */
+    filter: brightness(70%);
+    transition: 0.4s;
+}
+
+.hover-card:hover .card-img-top { filter: brightness(100%); }
+
+.section-box {
+    padding: 35px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
